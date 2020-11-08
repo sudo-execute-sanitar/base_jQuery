@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Choose your page</title>
+  <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
+</head>
+<body>
+ 
+    <div style="overflow: hidden;">
+        <p id="p1" style="float: left;">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Commodi aut voluptatibus ad reprehenderit sit sequi enim</p>
+        <p id="p2" style="float: right;">content2</p>
+    </div>
+
+    <div style="overflow: hidden;">
+        <button id="btn1" class="use" style="float: left;">btn1</button>
+        <button id="btn2" style="float: right;">btn2</button>
+    </div>
+ 
+<script>
+$(document).ready(function () {
+    $("#p1").show();
+    $("#p2").hide();
+});
+$("#btn2").click(function(){
+    $("#p1").hide("slow");
+    $("#p2").show("slow");
+    $("#btn1").removeClass("use");
+    $("#btn2").addClass("use");
+});
+$("#btn1").click(function(){
+    $("#p2").hide("slow");
+    $("#p1").show("slow");
+    $("#btn2").removeClass("use");
+    $("#btn1").addClass("use");
+});
+</script>
+
+<style>
+.use{
+    background-color: green;
+}
+</style>
+ 
+</body>
+</html>
